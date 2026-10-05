@@ -2,10 +2,28 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="guiPane" minHeight="99.0" minWidth="160.0" prefHeight="380.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.library_app.view.codebehind.MainWindow">
-   <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Label" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TilePane layoutX="86.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TilePane fx:id="bookGrid" prefHeight="259.0" prefWidth="434.0" />
+                     </children></TilePane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="My Library" />
+            <Button fx:id="addBookBtn" mnemonicParsing="false" text="Add Book" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
