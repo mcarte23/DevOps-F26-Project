@@ -1,6 +1,8 @@
 package edu.westga.comp4420.library_app.view.codebehind;
 
 import edu.westga.comp4420.library_app.model.Book;
+import edu.westga.comp4420.library_app.model.OpenLibraryAPI;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -48,20 +50,17 @@ public class MainWindow {
 		return card;
 	}
 
-	private void dummyBooks() {
-		List<Book> books = List.of(new Book("Crime and Punishment", "Dostoevsky", "https://ia800100.us.archive.org/view_archive.php?archive=/5/items/l_covers_0012/l_covers_0012_62.zip&file=0012622046-L.jpg"),
-				new Book("1984", "George Orwell", "https://covers.openlibrary.org/b/id/15255315-L.jpg"), new Book("Placeholder", "John Doe"));
-
+	private void displayBooks(List<Book> books) {
 		for (Book book : books) {
 			this.bookGrid.getChildren().add(this.createBookCard(book));
 		}
 	}
-
+    private OpenLibraryAPI api = new OpenLibraryAPI();
 
 	@FXML
 	void initialize() {
 		assert this.bookGrid != null : "fx:id=\"bookGrid\" was not injected";
-		dummyBooks();
+		api.searchBooks("crime and punishment").thenAccept(books -> Platform.runLater(() -> displayBooks(books)));
 	}
 
 }
