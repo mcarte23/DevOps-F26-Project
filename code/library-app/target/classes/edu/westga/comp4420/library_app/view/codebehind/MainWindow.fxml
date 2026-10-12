@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.library_app.view.codebehind.MainWindow">
+    <center>
+        <ScrollPane fitToWidth="true" prefWidth="540.0" maxWidth="-Infinity" BorderPane.alignment="CENTER" style="-fx-background-color: transparent; -fx-background-inset: 0; -fx-padding: 0;">
+            <content>
+                <TilePane fx:id="bookGrid" hgap="10.0" vgap="10.0">
+                </TilePane>
+            </content>
+        </ScrollPane>
+    </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="My Library" />
+            <Button fx:id="addBookBtn" mnemonicParsing="false" text="Add Book" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
