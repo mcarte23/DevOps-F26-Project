@@ -19,13 +19,16 @@ public class OpenLibraryAPI {
     private static final String SEARCH_URL = "https://openlibrary.org/search.json";
     private static final String COVER_URL = "https://covers.openlibrary.org/b/olid/";
     private static final String SEARCH_FIELDS = "key,title,author_name,cover_edition_key,first_publish_year,number_of_pages_median,subject";
-    private HttpClient client = HttpClient.newHttpClient();
+    private final HttpClient client = HttpClient.newHttpClient();
 
     public CompletableFuture<List<Book>> searchBooks(String query) {
+        if (query.isEmpty()) {
+            throw new IllegalArgumentException("query must not be empty");
+        }
         String url = SEARCH_URL + "?q=" + URLEncoder.encode(query, StandardCharsets.UTF_8) + "&fields=" + SEARCH_FIELDS + "&limit=10";
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).build();
 
-        return client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApply(response -> parseBooks(response.body()));
+        return this.client.sendAsync(request, HttpResponse.BodyHandlers.ofString()).thenApply(response -> this.parseBooks(response.body()));
     }
 
     private List<Book> parseBooks(String responseBody) {
@@ -46,8 +49,7 @@ public class OpenLibraryAPI {
             }
             return bookList;
         } catch (JsonProcessingException e) {
-            System.out.println(e);
+            throw new RuntimeException(e);
         }
-        return bookList;
     }
 }

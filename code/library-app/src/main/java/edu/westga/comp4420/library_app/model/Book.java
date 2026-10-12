@@ -15,7 +15,13 @@ public class Book {
             throw new IllegalArgumentException("author must not be null");
         }
         if (coverUrl == null) {
-            throw new IllegalArgumentException("cover url must no be null");
+            throw new IllegalArgumentException("cover url must not be null");
+        }
+        if (firstPublishYear == null) {
+            throw new IllegalArgumentException("publish year must not be null");
+        }
+        if (pageCount == null) {
+            throw new IllegalArgumentException("page count must not be null");
         }
         this.title = title;
         this.author = author;

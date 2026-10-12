@@ -16,13 +16,15 @@ public class BookDetails {
     @FXML private Label pageCountLabel;
     @FXML private ImageView coverImage;
     @FXML private VBox guiPane;
-    private void closeWindow() {this.guiPane.getScene().getWindow().hide();}
+    private void closeWindow() {
+        this.guiPane.getScene().getWindow().hide();
+    }
     public void setBookDetails(Book book) {
-        titleLabel.setText("Title " + book.getTitle());
-        authorLabel.setText("Author: " + book.getAuthor());
-        publishYearLabel.setText("Published: " + book.getPublishYear());
-        pageCountLabel.setText("Page Count: " + book.getPageCount());
-        coverImage.setImage(new Image(book.getCoverUrl(), true));
+        this.titleLabel.setText("Title " + book.getTitle());
+        this.authorLabel.setText("Author: " + book.getAuthor());
+        this.publishYearLabel.setText("Published: " + book.getPublishYear());
+        this.pageCountLabel.setText("Page Count: " + book.getPageCount());
+        this.coverImage.setImage(new Image(book.getCoverUrl(), true));
     }
     @FXML void onCloseButton(ActionEvent event) {
         this.closeWindow();

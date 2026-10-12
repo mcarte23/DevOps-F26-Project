@@ -30,7 +30,6 @@ import javafx.stage.Stage;
  */
 public class MainWindow {
 	@FXML private TilePane bookGrid;
-	private List<Book> bookList;
 	private static final double CARD_WIDTH = 120;
 	private static final double IMAGE_WIDTH = 100;
 	private static final double IMAGE_HEIGHT = 160;
@@ -52,7 +51,7 @@ public class MainWindow {
 
         card.setMaxWidth(CARD_WIDTH);
 		card.setCursor(Cursor.HAND);
-		card.setOnMouseClicked(e -> openBookDetails(book));
+		card.setOnMouseClicked(e -> this.openBookDetails(book));
 		return card;
 	}
 
@@ -83,12 +82,12 @@ public class MainWindow {
 			errorBox.showAndWait();
 		}
 	}
-    private OpenLibraryAPI api = new OpenLibraryAPI();
+    private final OpenLibraryAPI api = new OpenLibraryAPI();
 
 	@FXML
 	void initialize() {
 		assert this.bookGrid != null : "fx:id=\"bookGrid\" was not injected";
-		api.searchBooks("crime and punishment").thenAccept(books -> Platform.runLater(() -> displayBooks(books)));
+		this.api.searchBooks("crime and punishment").thenAccept(books -> Platform.runLater(() -> this.displayBooks(books)));
 	}
 
 }
