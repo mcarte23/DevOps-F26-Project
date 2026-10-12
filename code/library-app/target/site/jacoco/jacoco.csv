@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Library-App,edu.westga.comp4420.library_app.model,OpenLibraryAPI,6,125,1,9,2,22,1,8,0,4
+Library-App,edu.westga.comp4420.library_app.model,Book,0,68,0,10,0,22,0,11,0,6
+Library-App,edu.westga.comp4420.library_app.view.codebehind,MainWindow,200,0,8,0,42,0,13,0,9,0
+Library-App,edu.westga.comp4420.library_app.view.codebehind,BookDetails,46,0,0,0,11,0,4,0,4,0
+Library-App,edu.westga.comp4420.library_app.view.codebehind,AddBook,4,0,0,0,2,0,2,0,2,0
+Library-App,edu.westga.comp4420.library_app,Main,27,0,0,0,9,0,3,0,3,0

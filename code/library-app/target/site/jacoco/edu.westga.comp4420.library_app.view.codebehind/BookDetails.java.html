@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookDetails.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Library-App</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.library_app.view.codebehind</a> &gt; <span class="el_source">BookDetails.java</span></div><h1>BookDetails.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.library_app.view.codebehind;
+
+import edu.westga.comp4420.library_app.model.Book;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+
+
+<span class="nc" id="L12">public class BookDetails {</span>
+    @FXML private Label titleLabel;
+    @FXML private Label authorLabel;
+    @FXML private Label publishYearLabel;
+    @FXML private Label pageCountLabel;
+    @FXML private ImageView coverImage;
+    @FXML private VBox guiPane;
+    private void closeWindow() {
+<span class="nc" id="L20">        this.guiPane.getScene().getWindow().hide();</span>
+<span class="nc" id="L21">    }</span>
+    public void setBookDetails(Book book) {
+<span class="nc" id="L23">        this.titleLabel.setText(&quot;Title &quot; + book.getTitle());</span>
+<span class="nc" id="L24">        this.authorLabel.setText(&quot;Author: &quot; + book.getAuthor());</span>
+<span class="nc" id="L25">        this.publishYearLabel.setText(&quot;Published: &quot; + book.getPublishYear());</span>
+<span class="nc" id="L26">        this.pageCountLabel.setText(&quot;Page Count: &quot; + book.getPageCount());</span>
+<span class="nc" id="L27">        this.coverImage.setImage(new Image(book.getCoverUrl(), true));</span>
+<span class="nc" id="L28">    }</span>
+    @FXML void onCloseButton(ActionEvent event) {
+<span class="nc" id="L30">        this.closeWindow();</span>
+<span class="nc" id="L31">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
