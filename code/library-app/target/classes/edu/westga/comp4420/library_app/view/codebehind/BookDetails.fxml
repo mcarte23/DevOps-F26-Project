@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="guiPane" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.library_app.view.codebehind.BookDetails">
+   <children>
+      <HBox alignment="CENTER" prefHeight="217.0" prefWidth="432.0" spacing="20.0" style="-fx-spacing: 20;">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fx:id="coverImage" fitHeight="140.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="239.0" prefWidth="199.0">
+               <children>
+                  <Label fx:id="titleLabel" text="Title: " />
+                  <Label fx:id="authorLabel" text="Author: " />
+                  <Label fx:id="publishYearLabel" text="Publish year: " />
+                  <Label fx:id="pageCountLabel" text="Page count: " />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button fx:id="closeDetailsButton" mnemonicParsing="false" onAction="#onCloseButton" text="Close" />
+   </children>
+</VBox>
