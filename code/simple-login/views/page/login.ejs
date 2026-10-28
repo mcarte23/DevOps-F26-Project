@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Comp 4420 Login App</title>
+    <meta name="description" content="Sample DB Connected Application for Comp 4420">
+    <meta name="author" content="Comp 4420">
+    <!-- Bootstrap CSS Reset -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+ <!-- Content -->
+    <div class="container">
+        <h1>Login</h1>
+		
+		<!-- Display error message passed from app.js, if any -->
+		<% if (error) { %>
+			<p class="text-danger"><%= error %></p>
+		<% } %>
+		
+        <form action="/api/login" method="POST">
+          Username: <input type="text" name="username" required><br>
+          Password: <input type="password" name="password" required><br>
+         <button type="submit">Login</button>
+        </form>
+		
+		<p>Don't have an account? <a href="/create_account">Create one</a></p>
+    </div>
+</body>
+</html>
