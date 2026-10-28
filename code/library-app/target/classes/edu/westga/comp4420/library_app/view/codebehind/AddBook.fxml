@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.library_app.view.codebehind.AddBook">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="200.0" layoutY="70.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="52.0" text="Title: " />
+                  <TextField fx:id="titleInput" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="200.0" layoutY="108.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="52.0" text="Author: " />
+                  <TextField fx:id="authorInput" />
+               </children>
+            </HBox>
+            <Button fx:id="addBookSubmit" layoutX="273.0" layoutY="208.0" mnemonicParsing="false" text="Submit" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

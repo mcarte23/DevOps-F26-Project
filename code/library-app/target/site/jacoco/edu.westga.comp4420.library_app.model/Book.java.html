@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Library-App</a> &gt; <a href="index.source.html" class="el_package">edu.westga.comp4420.library_app.model</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package edu.westga.comp4420.library_app.model;
+
+
+public class Book {
+    private final String title;
+    private final String author;
+    private final String coverUrl;
+    private final String firstPublishYear;
+    private final String pageCount;
+<span class="fc" id="L10">    public Book(String title, String author, String coverUrl, String firstPublishYear, String pageCount) {</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (title == null) {</span>
+<span class="fc" id="L12">            throw new IllegalArgumentException(&quot;title must not be null&quot;);</span>
+        }
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (author == null) {</span>
+<span class="fc" id="L15">            throw new IllegalArgumentException(&quot;author must not be null&quot;);</span>
+        }
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (coverUrl == null) {</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;cover url must not be null&quot;);</span>
+        }
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (firstPublishYear == null) {</span>
+<span class="fc" id="L21">            throw new IllegalArgumentException(&quot;publish year must not be null&quot;);</span>
+        }
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (pageCount == null) {</span>
+<span class="fc" id="L24">            throw new IllegalArgumentException(&quot;page count must not be null&quot;);</span>
+        }
+<span class="fc" id="L26">        this.title = title;</span>
+<span class="fc" id="L27">        this.author = author;</span>
+<span class="fc" id="L28">        this.coverUrl = coverUrl;</span>
+<span class="fc" id="L29">        this.firstPublishYear = firstPublishYear;</span>
+<span class="fc" id="L30">        this.pageCount = pageCount;</span>
+<span class="fc" id="L31">    }</span>
+    public String getTitle() {
+<span class="fc" id="L33">        return this.title;</span>
+    }
+
+    public String getAuthor() {
+<span class="fc" id="L37">        return this.author;</span>
+    }
+    public String getCoverUrl() {
+<span class="fc" id="L40">        return this.coverUrl;</span>
+    }
+
+    public String getPublishYear() {
+<span class="fc" id="L44">        return this.firstPublishYear;</span>
+    }
+
+    public String getPageCount() {
+<span class="fc" id="L48">        return this.pageCount;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
